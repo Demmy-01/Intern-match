@@ -189,7 +189,7 @@ Start the Express server which connects to CognoDB via the Bolt driver:
 ```bash
 node server.js
 ```
-The backend API will start on `https://intern-match-atrv.onrender.com/api/students`.
+The backend API will start on `https://localhost:5000/api/students`.
 
 ### 5. Run the React Frontend
 Open a new terminal window, navigate to the `frontend` directory, install dependencies, and start the Vite development server:
@@ -199,7 +199,7 @@ cd frontend
 npm install
 npm run dev
 ```
-The application UI will now be accessible at `https://intern-match-rosy.vercel.app/`.
+The application UI will now be accessible at `https://localhost:5173/`.
 
 ---
 
