@@ -434,6 +434,14 @@ app.get('/api/students/:id/graph', async (req, res) => {
   }
 });
 
+// Enable CORS for all frontend origins (Vercel, Localhost, etc.)
+app.use(cors({ origin: '*' }));
+
+// Root route for Render health checks and testing
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'InternMatch Graph API Server is running!' });
+});
+
 // ─── Start the server ────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
