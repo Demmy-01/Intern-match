@@ -16,9 +16,11 @@ export default function ErrorBanner({ message, onRetry, onDismiss }: Props) {
       <AlertTriangle size={18} className="text-rose-600 flex-shrink-0 mt-0.5" />
 
       <div className="flex-1 min-w-0">
-        <p className="text-xs font-semibold text-rose-900">{message}</p>
-        <p className="text-[11px] text-rose-700/80 mt-0.5">
-          Check if CognoDB database and backend API are running.
+        <p className="text-xs font-bold text-rose-900 uppercase tracking-wider mb-0.5">
+          API Communication Error
+        </p>
+        <p className="text-xs font-medium text-rose-800 break-words leading-relaxed">
+          {message}
         </p>
       </div>
 

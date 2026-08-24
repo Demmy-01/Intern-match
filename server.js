@@ -3,8 +3,16 @@ const express = require('express');
 const cors = require('cors');
 const neo4j = require('neo4j-driver');
 
-const app = express();
-app.use(cors());
+// ─── Configure CORS for Vercel, Localhost, and All Origins ──────────────────
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+}));
+
+// Handle preflight OPTIONS requests for all endpoints
+app.options('*', cors());
+
 app.use(express.json());
 
 // ─── Initialize Neo4j driver for CognoDB ─────────────────────────────────────
@@ -433,9 +441,6 @@ app.get('/api/students/:id/graph', async (req, res) => {
     await session.close();
   }
 });
-
-// Enable CORS for all frontend origins (Vercel, Localhost, etc.)
-app.use(cors({ origin: '*' }));
 
 // Root route for Render health checks and testing
 app.get('/', (req, res) => {
