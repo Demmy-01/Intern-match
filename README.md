@@ -199,7 +199,7 @@ cd frontend
 npm install
 npm run dev
 ```
-The application UI will now be accessible at `https://localhost:5173/`.
+The application UI will now be accessible at `http://localhost:5173/`.
 
 ---
 
